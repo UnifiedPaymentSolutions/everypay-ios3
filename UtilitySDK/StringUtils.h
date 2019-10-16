@@ -2,9 +2,7 @@
 //  StringUtils.h
 //  everyPay_v2
 //
-//  Created by Duc.LT on 10/13/19.
-//  Copyright © 2019 MobiLab. All rights reserved.
-//
+
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

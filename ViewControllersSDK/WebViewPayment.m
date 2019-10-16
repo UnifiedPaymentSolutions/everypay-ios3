@@ -2,9 +2,7 @@
 //  WebViewPayment.m
 //  everyPay_v2
 //
-//  Created by Duc.LT on 10/8/19.
-//  Copyright © 2019 MobiLab. All rights reserved.
-//
+
 
 #import "WebViewPayment.h"
 
