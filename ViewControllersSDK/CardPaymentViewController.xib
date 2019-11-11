@@ -23,6 +23,10 @@
                 <outlet property="viewCardNumber" destination="fQC-yh-RN8" id="Fjp-0A-muZ"/>
                 <outlet property="viewDate" destination="U2b-YU-HEy" id="vVf-hR-sBD"/>
                 <outlet property="viewName" destination="HSa-IT-l3k" id="Tya-bD-tTX"/>
+                <outletCollection property="textFieldCollection" destination="gij-5I-V0i" id="hDy-Ly-chR"/>
+                <outletCollection property="textFieldCollection" destination="PrD-hu-9RF" id="CO5-dT-cAQ"/>
+                <outletCollection property="textFieldCollection" destination="KNC-ev-sLM" id="Q8h-0B-yAn"/>
+                <outletCollection property="textFieldCollection" destination="aTf-VM-Nrh" id="Mmt-Xf-t3I"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -69,7 +73,9 @@
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                     <color key="value" red="0.97647058819999999" green="0.48627450979999998" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Card Number"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Card Number"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="XXXX XXXX XXXX XXXX"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Card Number"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="Gkj-B0-yea"/>

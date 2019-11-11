@@ -18,18 +18,34 @@
     UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(backBtn:)];
     self.navigationItem.leftBarButtonItem = backBtn;
     
+    [self initLayout];
+    
     self.title = @"Every Pay";
     _lblHost.text = _host;
-    
-    [StringUtils setBorderView:_btnPay withColor:[UIColor clearColor]];
-    _btnPay.backgroundColor = [UIColor colorWithRed:249.f/255.f green:124.f/255.f blue:43.f/255.f alpha:1.f];
     
     [_tfCardNumber addTarget:self action:@selector(creditCardNumberFormatter:) forControlEvents:UIControlEventEditingChanged];
     [_tfDate addTarget:self action:@selector(creditCardExpiryFormatter:) forControlEvents:UIControlEventEditingChanged];
     
+    [StringUtils setBorderView:_btnPay withColor:[UIColor clearColor]];
+    _btnPay.backgroundColor = [UIColor colorWithRed:249.f/255.f green:124.f/255.f blue:43.f/255.f alpha:1.f];
     NSString *titleBtn = [NSString stringWithFormat:@"Pay %@%@",_currency,[StringUtils returnStringNumber:@([_amount integerValue])]];
     [_btnPay setTitle:titleBtn forState:UIControlStateNormal];
     
+}
+
+- (void)initLayout {
+    for (SkyFloatingLabelTextField *textfield in _textFieldCollection) {
+        textfield.textColor = [SDKPaymentSettings getTextColor];
+        textfield.placeholderColor = [SDKPaymentSettings getPlaceholderColor];
+        textfield.titleColor = [SDKPaymentSettings getTitleColor];
+        textfield.lineColor = [SDKPaymentSettings getLineColor];
+        textfield.errorColor = [SDKPaymentSettings getErrorColor];
+        textfield.lineErrorColor = [SDKPaymentSettings getLineErrorColor];
+        textfield.textErrorColor = [SDKPaymentSettings getTextErrorColor];
+        textfield.titleErrorColor = [SDKPaymentSettings getTitleErrorColor];
+        textfield.selectedTitleColor = [SDKPaymentSettings getSelectedTitleColor];
+        textfield.selectedLineColor = [SDKPaymentSettings getSelectedLineColor];
+    }
 }
 
 #pragma mark - Action Button
@@ -39,7 +55,7 @@
 
 - (IBAction)clickPay:(id)sender {
     [self.view endEditing:YES];
-    NSString *cardNumber = [_tfCardNumber.text stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    NSString *cardNumber = [_tfCardNumber.text stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSString *name = _tfName.text;
     NSString *cvc = _tfCSC.text;
     NSString *month = @"";
@@ -56,15 +72,15 @@
     _tfDate.errorMessage = @"";
     _tfCSC.errorMessage = @"";
     if (cardNumber.length < 16) {
-        _tfCardNumber.errorMessage = @"Insert Card Number";
+        _tfCardNumber.errorMessage = [SDKPaymentSettings getCardNumberErrorMessage];
         return;
     }
     if (name.length == 0) {
-        _tfName.errorMessage = @"Insert Name on Card";
+        _tfName.errorMessage = [SDKPaymentSettings getCardNameErrorMessage];
         return;
     }
     if (_tfDate.text.length < 5) {
-        _tfDate.errorMessage = @"Insert Expiration Date";
+        _tfDate.errorMessage = [SDKPaymentSettings getExpirationDateErrorMessage];
         return;
     }
     if ([month integerValue] > 12 || [month integerValue] <= 0) {
@@ -76,7 +92,7 @@
         return;
     }
     if (cvc.length < 3) {
-        _tfCSC.errorMessage = @"Insert CVC";
+        _tfCSC.errorMessage = [SDKPaymentSettings getCVCErrorMessage];
         return;
     }
     [StringUtils showLoading:YES withView:self];
@@ -84,23 +100,20 @@
         [StringUtils showLoading:NO withView:self];
         if (dict && [dict objectForKey:@"payment_state"]) {
             NSString *state = [dict objectForKey:@"payment_state"];
-            if ([state isEqualToString:@"settled"]
+            if (!state || [state isEqualToString:@""]) {
+                return;
+            } else if ([state isEqualToString:@"settled"]
                 || [state isEqualToString:@"completed"]
                 || [state isEqualToString:@"authorised"]) {
                 [self backBtn:nil];
                 if (self.delegate && [self.delegate respondsToSelector:@selector(paymentSuccess)]) {
                     [self.delegate paymentSuccess];
                 }
-            } else if ([state containsString:@"waiting_for_3ds"]) {
+            } else {
                 WebViewPayment *webview = [[WebViewPayment alloc] initWithNibName:@"WebViewPayment" bundle:nil];
                 webview.urlPayment = self->_payment_link;
                 webview.delegate = self->_target;
                 [StringUtils addChildView:webview withParentView:self];
-            } else {
-                [self backBtn:nil];
-                if (self.delegate && [self.delegate respondsToSelector:@selector(paymentFailure)]) {
-                    [self.delegate paymentFailure];
-                }
             }
         }
     } failureBlock:^(NSInteger failureCode, NSString * _Nonnull msgError) {

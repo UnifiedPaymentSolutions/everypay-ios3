@@ -19,7 +19,7 @@
     return _sharedInstance;
 }
 
-- (void) paymentWithHost:(NSString *)host andMobiteToken:(NSString *)mobileToken andCurrency:(NSString *)currency andPaymentLink:(NSString *)paymentLink andAmount:(NSString *)amount andPaymentType:(NSString *)source andAPIUsername:(NSString *)apiUsername andDelegate:(id)target {
+- (void) paymentWithHost:(NSString *)host andMobileToken:(NSString *)mobileToken andCurrency:(NSString *)currency andPaymentLink:(NSString *)paymentLink andAmount:(NSString *)amount andPaymentType:(NSString *)source andAPIUsername:(NSString *)apiUsername andDelegate:(id)target {
     //Card Payment
     if ([source isEqualToString:@"card"]) {
         CardPaymentViewController *cardVC = [[CardPaymentViewController alloc] initWithNibName:@"CardPaymentViewController" bundle:nil];

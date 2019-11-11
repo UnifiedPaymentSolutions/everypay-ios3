@@ -8,6 +8,7 @@
 #import "WebViewPayment.h"
 #import "StringUtils.h"
 #import "PaymentAPI.h"
+#import "SDKPaymentSettings.h"
 
 @import SkyFloatingLabelTextField;
 
@@ -39,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet SkyFloatingLabelTextField *tfCSC;
 @property (weak, nonatomic) IBOutlet UIButton *btnPay;
 @property (strong, nonatomic) id target;
+@property (strong, nonatomic) IBOutletCollection(SkyFloatingLabelTextField) NSArray *textFieldCollection;
 - (IBAction)clickPay:(id)sender;
 
 @end

@@ -92,14 +92,26 @@
         [StringUtils showLoading:NO withView:self];
         if (dict && [dict objectForKey:@"state"]) {
             NSString *state = [dict objectForKey:@"state"];
-            if ([state isEqualToString:@"settled"]
-                || [state isEqualToString:@"completed"]) {
+            if (!state || [state isEqualToString:@""]) {
+                return;
+            } else if ([state isEqualToString:@"settled"]
+                       || [state isEqualToString:@"completed"]
+                       || [state isEqualToString:@"authorized"]) {
                 [webView stopLoading];
                 if (self->_isCompleted) {
                     self->_isCompleted = NO;
                     [self backBtn:nil];
                     if (self.delegate && [self.delegate respondsToSelector:@selector(paymentSuccess)]) {
                         [self.delegate paymentSuccess];
+                    }
+                }
+            } else if ([state isEqualToString:@"failed"]){
+                [webView stopLoading];
+                if (self->_isCompleted) {
+                    self->_isCompleted = NO;
+                    [self backBtn:nil];
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(paymentFailure)]) {
+                        [self.delegate paymentFailure];
                     }
                 }
             }
