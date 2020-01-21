@@ -1,6 +1,6 @@
 //
 //  PaymentAPI.h
-//  everyPay_v2
+//  everyPay_v3
 //
 
 

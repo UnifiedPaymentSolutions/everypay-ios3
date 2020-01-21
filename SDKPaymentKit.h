@@ -1,6 +1,6 @@
 //
 //  SDKPaymentKit.h
-//  everyPay_v2
+//  everyPay_v3
 //
 
 
@@ -12,9 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SDKPaymentKit : NSObject
 
-+ (SDKPaymentKit *)sharedInstance;
-- (void) paymentWithHost:(NSString *)host andMobileToken:(NSString *)mobileToken andCurrency:(NSString *)currency andPaymentLink:(NSString *)paymentLink andAmount:(NSString *)amount andPaymentType:(NSString *)source andAPIUsername:(NSString *)apiUsername andDelegate:(id)target;
-
++ (instancetype)initWithUserName:(NSString *)apiUsername andHost:(NSString *)host andAmount:(NSString *)amount andCurrency:(NSString *)currency;
+- (void) paymentWithMobileToken:(NSString *)mobileToken andPaymentLink:(NSString *)paymentLink andPaymentType:(NSString *)source andDelegate:(id)target;
+@property (nonatomic, copy) NSString *host;
+@property (nonatomic, copy) NSString *apiUsername;
+@property (nonatomic, copy) NSString *amount;
+@property (nonatomic, copy) NSString *currency;
 @end
 
 NS_ASSUME_NONNULL_END

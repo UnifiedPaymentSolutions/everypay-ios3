@@ -1,6 +1,6 @@
 //
 //  CardPaymentViewController.h
-//  everyPay_v2
+//  everyPay_v3
 //
 
 
@@ -9,8 +9,7 @@
 #import "StringUtils.h"
 #import "PaymentAPI.h"
 #import "SDKPaymentSettings.h"
-
-@import SkyFloatingLabelTextField;
+#import "everyPayv3-Swift.h"
 
 @protocol CardPaymentViewControllerDelegate <NSObject>
 

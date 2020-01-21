@@ -1,6 +1,6 @@
 //
 //  WebViewPayment.m
-//  everyPay_v2
+//  everyPay_v3
 //
 
 
@@ -90,8 +90,9 @@
     [StringUtils showLoading:YES withView:self];
     [[PaymentAPI sharedInstance] getDataFrom:urlHost withCompletion:^(NSDictionary * _Nonnull dict) {
         [StringUtils showLoading:NO withView:self];
-        if (dict && [dict objectForKey:@"state"]) {
-            NSString *state = [dict objectForKey:@"state"];
+        NSDictionary *dictData = [StringUtils nestedDictionaryByReplacingNullsWithNil:dict];
+        if (dictData && [dictData objectForKey:@"state"]) {
+            NSString *state = [dictData objectForKey:@"state"];
             if (!state || [state isEqualToString:@""]) {
                 return;
             } else if ([state isEqualToString:@"settled"]

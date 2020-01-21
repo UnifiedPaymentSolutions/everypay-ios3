@@ -1,6 +1,6 @@
 //
 //  CardPaymentViewController.m
-//  everyPay_v2
+//  everyPay_v3
 //
 
 
@@ -97,9 +97,10 @@
     }
     [StringUtils showLoading:YES withView:self];
     [[PaymentAPI sharedInstance] callAPIPayment:cardNumber andName:name andMonth:month andYear:year andCVC:cvc andAPIUsername:_apiUsername andMobileToken:_mobile_access_token andHost:_host withCompletion:^(NSDictionary * _Nonnull dict) {
+        NSDictionary *dictData = [StringUtils nestedDictionaryByReplacingNullsWithNil:dict];
         [StringUtils showLoading:NO withView:self];
-        if (dict && [dict objectForKey:@"payment_state"]) {
-            NSString *state = [dict objectForKey:@"payment_state"];
+        if (dictData && [dictData objectForKey:@"payment_state"]) {
+            NSString *state = [dictData objectForKey:@"payment_state"];
             if (!state || [state isEqualToString:@""]) {
                 return;
             } else if ([state isEqualToString:@"settled"]

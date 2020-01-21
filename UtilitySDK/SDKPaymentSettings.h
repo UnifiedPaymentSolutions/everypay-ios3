@@ -1,6 +1,6 @@
 //
 //  SDKPaymentSettings.h
-//  everyPay_v2
+//  everyPay_v3
 //
 
 #import <Foundation/Foundation.h>
