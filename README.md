@@ -18,7 +18,7 @@ On Card Payment's screen, a full-screen WebView is opened and the associated pa
 APM screen presents a preconfigured Card Details form and user have to enter the information of user card to perform payment.
 
 
-**NB!** You have to add following item to your Info.plist file, in order for SDK to work. Otherwise ATS will complain about TLS handshake :
+**NB!** If your server runs on non-secure (http) domains, you have to add following item to your Info.plist file, in order for SDK to work. Otherwise ATS will complain about TLS handshake :
 ```xml
     <key>NSAppTransportSecurity</key>
         <dict>
