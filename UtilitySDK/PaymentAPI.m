@@ -43,7 +43,7 @@
     params[@"api_username"] = apiUsername;
     
     NSMutableDictionary *cardDetail = [[NSMutableDictionary alloc] init];
-    cardDetail[@"number"] = cardNumber;
+    cardDetail[@"cc_number"] = cardNumber;
     cardDetail[@"month"] = month;
     cardDetail[@"year"] = year;
     cardDetail[@"holder_name"] = name;
