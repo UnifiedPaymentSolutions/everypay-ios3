@@ -30,15 +30,34 @@ APM screen presents a preconfigured Card Details form and user have to enter the
 
 iOS 8 or later is required for NSURLSession that is used in everyPay SDK.
 
+## SDK versioning and EveryPay API version mapping
+
+EveryPay API release policy starting from v3 is to do incremental changes with major version only, such as v2, v3, v4, etc.
+
+SDK versions have `major.minor.patch` semantics:
+
+* major: corresponds to breaking changes in SDK itself (e.g. change in payment flow)
+* minor: corresponds to EveryPay API versions
+* patch: corresponds to any non-breaking changes in the SDK.
+
+Example mappings:
+
+* SDK `3.3.*` -> API `v3`
+
 ## Integrating the SDK
+
+### Using CocoaPods
+
+Add 'everyPay-ios' to podfile and include SDKPaymentKit.h where needed.
+
+```ruby
+  pod 'everyPay-ios', '~> 3.3'
+```
 
 ### Manually
 
 Add folder sdk to your project and include SDKPaymentKit.h where needed.
 
-### Using CocoaPods
-
-Add 'everyPay_v3-ios' to podfile and include SDKPaymentKit.h where needed.
 
 ### Configure the SDK parameters
 
