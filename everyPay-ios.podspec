@@ -9,9 +9,9 @@
 Pod::Spec.new do |spec|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  spec.name         = "everyPay-ios3"
+  spec.name         = "everyPay-ios"
   spec.version      = "3.0.1"
-  spec.summary      = "iOS SDK v3 for EveryPay service"
+  spec.summary      = "iOS SDK for EveryPay service"
   spec.description  = <<-DESC
                    EveryPay SDK for iOS allows merchants to easily integrate EveryPay payment flow into applications.
                    Check homepage for sample usage.
