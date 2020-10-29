@@ -13,9 +13,9 @@
 From EveryPay SDK has two payment flows:
 
 1. Alternative Payment Method (APM) Flow<br/>
-On Card Payment's screen, a full-screen WebView is opened and the associated payment_link is opened inside this WebView<br/>
-2. Card Payment Flow<br/>
 APM screen presents a preconfigured Card Details form and user have to enter the information of user card to perform payment.
+2. Card Payment Flow<br/>
+On Card Payment's screen, a full-screen WebView is opened and the associated payment_link is opened inside this WebView<br/>
 
 
 **NB!** If your server runs on non-secure (http) domains, you have to add following item to your Info.plist file, in order for SDK to work. Otherwise ATS will complain about TLS handshake :
