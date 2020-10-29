@@ -24,7 +24,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "EveryPay" => "support@every-pay.com" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  spec.platform     = :ios, "8.0"
+  spec.platform     = :ios, "9.0"
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.source       = { :git => "https://github.com/UnifiedPaymentSolutions/everypay-ios3.git", :tag => "#{spec.version}" }
