@@ -34,16 +34,17 @@
 }
 
 - (void)initLayout {
-    for (SkyFloatingLabelTextField *textfield in _textFieldCollection) {
+    [_tfCardNumber setPlaceholderText:@"XXXX XXXX XXXX XXXX"];
+    [_tfCardNumber setPlaceholderLabel:@"Card Number"];
+    
+    for (ACFloatingTextField *textfield in _textFieldCollection) {
         textfield.textColor = [SDKPaymentSettings getTextColor];
-        textfield.placeholderColor = [SDKPaymentSettings getPlaceholderColor];
-        textfield.titleColor = [SDKPaymentSettings getTitleColor];
+        textfield.placeHolderColor = [SDKPaymentSettings getPlaceholderColor];
+        textfield.selectedPlaceHolderColor = [SDKPaymentSettings getTitleColor];
+        textfield.selectedPlaceHolderTextfieldColor = [SDKPaymentSettings getPlaceholderColor];
         textfield.lineColor = [SDKPaymentSettings getLineColor];
-        textfield.errorColor = [SDKPaymentSettings getErrorColor];
-        textfield.lineErrorColor = [SDKPaymentSettings getLineErrorColor];
-        textfield.textErrorColor = [SDKPaymentSettings getTextErrorColor];
-        textfield.titleErrorColor = [SDKPaymentSettings getTitleErrorColor];
-        textfield.selectedTitleColor = [SDKPaymentSettings getSelectedTitleColor];
+        textfield.errorLineColor = [SDKPaymentSettings getLineErrorColor];
+        textfield.errorTextColor = [SDKPaymentSettings getTextErrorColor];
         textfield.selectedLineColor = [SDKPaymentSettings getSelectedLineColor];
     }
 }
@@ -67,32 +68,38 @@
     if (arrDate.count > 1) {
         year = [arrDate objectAtIndex:1];
     }
-    _tfCardNumber.errorMessage = @"";
-    _tfName.errorMessage = @"";
-    _tfDate.errorMessage = @"";
-    _tfCSC.errorMessage = @"";
+    _tfCardNumber.errorText = @"";
+    _tfName.errorText = @"";
+    _tfDate.errorText = @"";
+    _tfCSC.errorText = @"";
     if (cardNumber.length < 16) {
-        _tfCardNumber.errorMessage = [SDKPaymentSettings getCardNumberErrorMessage];
+        _tfCardNumber.errorText = [SDKPaymentSettings getCardNumberErrorMessage];
+        [_tfCardNumber showError];
         return;
     }
     if (name.length == 0) {
-        _tfName.errorMessage = [SDKPaymentSettings getCardNameErrorMessage];
+        _tfName.errorText = [SDKPaymentSettings getCardNameErrorMessage];
+        [_tfName showError];
         return;
     }
     if (_tfDate.text.length < 5) {
-        _tfDate.errorMessage = [SDKPaymentSettings getExpirationDateErrorMessage];
+        _tfDate.errorText = [SDKPaymentSettings getExpirationDateErrorMessage];
+        [_tfDate showError];
         return;
     }
     if ([month integerValue] > 12 || [month integerValue] <= 0) {
-        _tfDate.errorMessage = @"Wrong Expiration Date";
+        _tfDate.errorText = @"Wrong Expiration Date";
+        [_tfDate showError];
         return;
     }
     if ([year integerValue] <= 0) {
-        _tfDate.errorMessage = @"Wrong Expiration Date";
+        _tfDate.errorText = @"Wrong Expiration Date";
+        [_tfDate showError];
         return;
     }
     if (cvc.length < 3) {
-        _tfCSC.errorMessage = [SDKPaymentSettings getCVCErrorMessage];
+        _tfCSC.errorText = [SDKPaymentSettings getCVCErrorMessage];
+        [_tfCSC showError];
         return;
     }
     [StringUtils showLoading:YES withView:self];

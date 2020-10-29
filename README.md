@@ -85,7 +85,7 @@ SDKPaymentKit *sdkPayment = [SDKPaymentKit initWithUserName:apiUsername andHost:
 
 ```
 
-**NOTE: EveryPay object initialization changed as of version 3.0.0. First you need to call [SDKPaymentKit initWithUserName:apiUsername andHost:host andAmount:amount andCurrency:currency];**
+**NOTE: EveryPay object initialization changed as of version 3.3.0. First you need to call [SDKPaymentKit initWithUserName:apiUsername andHost:host andAmount:amount andCurrency:currency];**
 
 Create a new EveryPay object, for example in your payment:
 

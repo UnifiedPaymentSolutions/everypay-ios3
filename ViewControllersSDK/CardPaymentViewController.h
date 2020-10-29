@@ -9,7 +9,7 @@
 #import "StringUtils.h"
 #import "PaymentAPI.h"
 #import "SDKPaymentSettings.h"
-#import "everyPayv3-Swift.h"
+#import "ACFloatingTextField.h"
 
 @protocol CardPaymentViewControllerDelegate <NSObject>
 
@@ -33,13 +33,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIView *viewName;
 @property (weak, nonatomic) IBOutlet UIView *viewDate;
 @property (weak, nonatomic) IBOutlet UIView *viewCSC;
-@property (weak, nonatomic) IBOutlet SkyFloatingLabelTextField *tfCardNumber;
-@property (weak, nonatomic) IBOutlet SkyFloatingLabelTextField *tfName;
-@property (weak, nonatomic) IBOutlet SkyFloatingLabelTextField *tfDate;
-@property (weak, nonatomic) IBOutlet SkyFloatingLabelTextField *tfCSC;
+@property (weak, nonatomic) IBOutlet ACFloatingTextField *tfCardNumber;
+@property (weak, nonatomic) IBOutlet ACFloatingTextField *tfName;
+@property (weak, nonatomic) IBOutlet ACFloatingTextField *tfDate;
+@property (weak, nonatomic) IBOutlet ACFloatingTextField *tfCSC;
 @property (weak, nonatomic) IBOutlet UIButton *btnPay;
 @property (strong, nonatomic) id target;
-@property (strong, nonatomic) IBOutletCollection(SkyFloatingLabelTextField) NSArray *textFieldCollection;
+@property (strong, nonatomic) IBOutletCollection(ACFloatingTextField) NSArray *textFieldCollection;
 - (IBAction)clickPay:(id)sender;
 
 @end

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,27 +53,10 @@
                                 <constraint firstAttribute="width" id="hV6-1g-XaK"/>
                             </constraints>
                         </imageView>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gij-5I-V0i" customClass="SkyFloatingLabelTextField" customModule="everyPayv3" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="XXXX XXXX XXXX XXXX" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gij-5I-V0i" customClass="ACFloatingTextField">
                             <rect key="frame" x="10" y="0.0" width="362" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                    <color key="value" red="0.97647058819999999" green="0.48627450979999998" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                    <color key="value" red="0.97647058819999999" green="0.48627450979999998" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                    <color key="value" red="0.97647058819999999" green="0.48627450979999998" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                    <color key="value" red="0.97647058819999999" green="0.48627450979999998" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Card Number"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="XXXX XXXX XXXX XXXX"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Card Number"/>
-                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="Gkj-B0-yea"/>
                             </connections>
@@ -94,7 +77,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSa-IT-l3k">
                     <rect key="frame" x="16" y="186" width="382" height="40"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PrD-hu-9RF" customClass="SkyFloatingLabelTextField" customModule="everyPayv3" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PrD-hu-9RF" customClass="ACFloatingTextField">
                             <rect key="frame" x="10" y="0.0" width="362" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -118,6 +101,7 @@
                             </connections>
                         </textField>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="8bA-Un-ZTd"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="PrD-hu-9RF" firstAttribute="leading" secondItem="8bA-Un-ZTd" secondAttribute="leading" constant="10" id="7Be-b4-1HV"/>
@@ -125,12 +109,11 @@
                         <constraint firstItem="PrD-hu-9RF" firstAttribute="centerX" secondItem="8bA-Un-ZTd" secondAttribute="centerX" id="Mz2-0L-b5F"/>
                         <constraint firstItem="PrD-hu-9RF" firstAttribute="height" secondItem="HSa-IT-l3k" secondAttribute="height" id="s9c-Cs-yic"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="8bA-Un-ZTd"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2b-YU-HEy">
                     <rect key="frame" x="16" y="236" width="186" height="40"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KNC-ev-sLM" customClass="SkyFloatingLabelTextField" customModule="everyPayv3" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KNC-ev-sLM" customClass="ACFloatingTextField">
                             <rect key="frame" x="10" y="0.0" width="166" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -154,6 +137,7 @@
                             </connections>
                         </textField>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="2Zd-fI-EOr"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="KNC-ev-sLM" firstAttribute="leading" secondItem="2Zd-fI-EOr" secondAttribute="leading" constant="10" id="BKn-Jd-QGU"/>
@@ -161,12 +145,11 @@
                         <constraint firstItem="KNC-ev-sLM" firstAttribute="centerY" secondItem="2Zd-fI-EOr" secondAttribute="centerY" id="gIm-IT-RkN"/>
                         <constraint firstItem="KNC-ev-sLM" firstAttribute="height" secondItem="U2b-YU-HEy" secondAttribute="height" id="z8K-ha-K2R"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="2Zd-fI-EOr"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42M-Hr-Jy3">
                     <rect key="frame" x="212" y="236" width="186" height="40"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTf-VM-Nrh" customClass="SkyFloatingLabelTextField" customModule="everyPayv3" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTf-VM-Nrh" customClass="ACFloatingTextField">
                             <rect key="frame" x="10" y="0.0" width="166" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -197,6 +180,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="bAD-Z3-J0c"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="aTf-VM-Nrh" firstAttribute="height" secondItem="42M-Hr-Jy3" secondAttribute="height" id="11T-hF-QxK"/>
@@ -206,7 +190,6 @@
                         <constraint firstItem="rv7-nC-ZGt" firstAttribute="leading" secondItem="aTf-VM-Nrh" secondAttribute="trailing" constant="10" id="bxq-n7-9qW"/>
                         <constraint firstItem="bAD-Z3-J0c" firstAttribute="trailing" secondItem="rv7-nC-ZGt" secondAttribute="trailing" id="zgr-Um-AuE"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="bAD-Z3-J0c"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJh-wP-VuA">
                     <rect key="frame" x="16" y="316" width="382" height="40"/>
@@ -218,6 +201,7 @@
                     </connections>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vJh-wP-VuA" firstAttribute="leading" secondItem="U2b-YU-HEy" secondAttribute="leading" id="Dch-uu-GFa"/>
@@ -245,8 +229,21 @@
                 <constraint firstItem="HSa-IT-l3k" firstAttribute="trailing" secondItem="fQC-yh-RN8" secondAttribute="trailing" id="yfv-9N-UUa"/>
                 <constraint firstItem="U2b-YU-HEy" firstAttribute="height" secondItem="HSa-IT-l3k" secondAttribute="height" id="yuG-nn-1uR"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
         </view>
     </objects>
+    <designables>
+        <designable name="KNC-ev-sLM">
+            <size key="intrinsicContentSize" width="98.5" height="18.5"/>
+        </designable>
+        <designable name="PrD-hu-9RF">
+            <size key="intrinsicContentSize" width="92.5" height="18.5"/>
+        </designable>
+        <designable name="aTf-VM-Nrh">
+            <size key="intrinsicContentSize" width="29" height="18.5"/>
+        </designable>
+        <designable name="gij-5I-V0i">
+            <size key="intrinsicContentSize" width="161" height="18.5"/>
+        </designable>
+    </designables>
 </document>
