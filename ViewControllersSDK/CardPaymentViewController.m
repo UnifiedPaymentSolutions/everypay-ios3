@@ -118,7 +118,8 @@
                     [self.delegate paymentSuccess];
                 }
             } else {
-                WebViewPayment *webview = [[WebViewPayment alloc] initWithNibName:@"WebViewPayment" bundle:nil];
+                NSBundle *bundle = [NSBundle bundleForClass:WebViewPayment.class];
+                WebViewPayment *webview = [[WebViewPayment alloc] initWithNibName:@"WebViewPayment" bundle:bundle];
                 webview.urlPayment = self->_payment_link;
                 webview.delegate = self->_target;
                 [StringUtils addChildView:webview withParentView:self];

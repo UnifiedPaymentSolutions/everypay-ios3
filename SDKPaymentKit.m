@@ -19,7 +19,8 @@
 
 - (void) paymentWithMobileToken:(NSString *)mobileToken andPaymentLink:(NSString *)paymentLink andPaymentType:(NSString *)source andDelegate:(id)target {
     if ([source isEqualToString:@"card"]) {
-        CardPaymentViewController *cardVC = [[CardPaymentViewController alloc] initWithNibName:@"CardPaymentViewController" bundle:nil];
+        NSBundle *bundle = [NSBundle bundleForClass:CardPaymentViewController.class];
+        CardPaymentViewController *cardVC = [[CardPaymentViewController alloc] initWithNibName:@"CardPaymentViewController" bundle:bundle];
         cardVC.host = self.host;
         cardVC.mobile_access_token = mobileToken;
         cardVC.currency = self.currency;
@@ -30,7 +31,8 @@
         cardVC.delegate = target;
         [self presentViewController:cardVC andParentViewController:(UIViewController *)target];
     } else {
-        WebViewPayment *webview = [[WebViewPayment alloc] initWithNibName:@"WebViewPayment" bundle:nil];
+        NSBundle *bundle = [NSBundle bundleForClass:WebViewPayment.class];
+        WebViewPayment *webview = [[WebViewPayment alloc] initWithNibName:@"WebViewPayment" bundle:bundle];
         webview.urlPayment = paymentLink;
         webview.delegate = target;
         [self presentViewController:webview andParentViewController:(UIViewController *)target];
