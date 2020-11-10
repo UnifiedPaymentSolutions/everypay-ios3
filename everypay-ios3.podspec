@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  spec.name         = "everyPay-ios"
+  spec.name         = "everypay-ios3"
   spec.version      = "3.3.2"
   spec.summary      = "iOS SDK for EveryPay service"
   spec.description  = <<-DESC

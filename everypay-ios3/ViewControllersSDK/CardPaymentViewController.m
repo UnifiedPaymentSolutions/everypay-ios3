@@ -20,7 +20,7 @@
     
     [self initLayout];
     
-    self.title = @"Payment";
+    self.title = @"Every Pay";
     _lblHost.text = _host;
     
     [_tfCardNumber addTarget:self action:@selector(creditCardNumberFormatter:) forControlEvents:UIControlEventEditingChanged];
