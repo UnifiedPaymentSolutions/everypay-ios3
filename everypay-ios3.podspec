@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.name         = "everypay-ios3"
-  spec.version      = "3.3.2"
+  spec.version      = "3.3.3"
   spec.summary      = "iOS SDK for EveryPay service"
   spec.description  = <<-DESC
                    EveryPay SDK for iOS allows merchants to easily integrate EveryPay payment flow into applications.
@@ -30,8 +30,9 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/UnifiedPaymentSolutions/everypay-ios3.git", :tag => "#{spec.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  spec.source_files  = "*.{h,m,swift}", "UtilitySDK", "UtilitySDK/**/*.{h,m,swift}", "ViewControllersSDK/*.{h,m,swift}"
+  spec.source_files  = "everypay-ios3/*.{h,m,swift}", "everypay-ios3/UtilitySDK", "everypay-ios3/UtilitySDK/**/*.{h,m,swift}", "everypay-ios3/ 
+ViewControllersSDK/*.{h,m,swift}"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  spec.resource  = "ViewControllersSDK/*.{xib}"
+  spec.resource  = "everypay-ios3/ViewControllersSDK/*.{xib}"
 end
