@@ -30,9 +30,9 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/UnifiedPaymentSolutions/everypay-ios3.git", :tag => "#{spec.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  spec.source_files  = "everypay-ios3/*.{h,m,swift}", "everypay-ios3/UtilitySDK", "everypay-ios3/UtilitySDK/**/*.{h,m,swift}", "everypay-ios3/ 
-ViewControllersSDK/*.{h,m,swift}"
+  spec.source_files  = "everypay-ios3/**/*.{h,m,swift}"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  spec.resource  = "everypay-ios3/ViewControllersSDK/*.{xib}"
+  spec.resource  = "everypay-ios3/**/*.{storyboard,xib,xcassets,json,png}"
+  spec.requires_arc = true
 end
