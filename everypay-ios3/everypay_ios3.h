@@ -14,7 +14,3 @@ FOUNDATION_EXPORT double everypay_ios3VersionNumber;
 FOUNDATION_EXPORT const unsigned char everypay_ios3VersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <everypay_ios3/PublicHeader.h>
-
-#import <everypay_ios3/SDKPaymentKit.h>
-#import <everypay_ios3/WebViewPayment.h>
-#import <everypay_ios3/CardPaymentViewController.h>
