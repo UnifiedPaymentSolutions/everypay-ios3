@@ -18,7 +18,7 @@
     UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(backBtn:)];
     self.navigationItem.leftBarButtonItem = backBtn;
     
-    self.title = @"Every Pay";
+    self.title = @"Payment";
     
     _isCompleted = YES;
     _WKWebview = [self createNewWKWebView];

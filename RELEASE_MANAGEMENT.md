@@ -9,7 +9,7 @@
 Note: below `pod spec lint` command will fail if the git tag is not yet pushed:
 
 ```
-pod spec lint everypay-ios3.podspec
+pod spec lint everypay-ios.podspec
 pod lib lint --allow-warnings
 ```
 
