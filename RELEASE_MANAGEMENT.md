@@ -1,6 +1,6 @@
 # Update Version
 
-1. update `everypay-ios3.podspec` file
+1. update `everyPay-ios.podspec` file
     * The `spec.version` string
 2. Tag git commit with specified version 
 
@@ -9,7 +9,7 @@
 Note: below `pod spec lint` command will fail if the git tag is not yet pushed:
 
 ```
-pod spec lint everypay-ios.podspec
+pod spec lint everyPay-ios.podspec
 pod lib lint --allow-warnings
 ```
 
